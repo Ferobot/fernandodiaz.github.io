@@ -15,6 +15,20 @@
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
+            cursor: none; /* Oculta el cursor predeterminado */
+        }
+
+        /* Estilos para el efecto de luz del cursor */
+        .cursor-light {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: transform 0.2s ease;
         }
 
         a {
@@ -253,6 +267,8 @@
     </style>
 </head>
 <body>
+    <div class="cursor-light"></div>
+
     <!-- Barra de Navegación -->
     <nav id="main-nav">
         <div class="logo">Mi Portafolio</div>
@@ -305,6 +321,22 @@
     </footer>
 
     <script>
+        // Efecto de luz del cursor
+        const cursorLight = document.querySelector('.cursor-light');
+
+        document.addEventListener('mousemove', (e) => {
+            cursorLight.style.left = e.clientX + 'px';
+            cursorLight.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursorLight.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorLight.style.transform = 'scale(1)';
+        });
+
         // Cambio de clase "active" en el enlace correspondiente según el scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
