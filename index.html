@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Personal Portfolio</title>
+    <title>Portafolio Personal</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        /* Global styles */
+        /* Estilos globales */
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #0a192f;
@@ -31,6 +31,10 @@
             align-items: center;
             padding: 20px;
             background-color: rgba(10, 25, 47, 0.85);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
         }
 
         .logo {
@@ -64,6 +68,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
+            padding-top: 80px;
         }
 
         .hero h1 {
@@ -102,6 +107,27 @@
             color: #0a192f;
         }
 
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about, .work, .projects, .contact {
+            margin-top: 50px;
+        }
+
+        .about h2, .work h2, .projects h2, .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .work p, .about p, .projects p, .contact p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -112,29 +138,53 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Barra de Navegación -->
     <nav>
-        <div class="logo">My Portfolio</div>
+        <div class="logo">Mi Portafolio</div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Sobre Mí</a>
+            <a href="#work">Experiencia</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Hi, my name is</h1>
-        <h2>John Doe.</h2>
-        <h2>I build things for the web.</h2>
-        <p>I’m a web developer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products.</p>
-        <a class="cta-btn" href="#contact">Get In Touch</a>
+        <h1>Hola, mi nombre es</h1>
+        <h2>Juan Pérez.</h2>
+        <h2>Construyo cosas para la web.</h2>
+        <p>Soy un desarrollador web especializado en construir experiencias digitales excepcionales. Actualmente, me enfoco en crear productos accesibles y centrados en el usuario.</p>
+        <a class="cta-btn" href="#contact">Contáctame</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Sobre Mí</h2>
+        <p>Soy un apasionado desarrollador con experiencia en la creación de aplicaciones web modernas y eficientes. Me encanta aprender nuevas tecnologías y enfrentar retos que me permitan mejorar mis habilidades.</p>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work">
+        <h2>Experiencia</h2>
+        <p>He trabajado en diversas empresas desarrollando aplicaciones y sitios web escalables, utilizando tecnologías como React, Node.js, y bases de datos SQL. Siempre enfocado en mejorar la experiencia del usuario final.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Proyectos</h2>
+        <p>Algunos de mis proyectos recientes incluyen aplicaciones web dinámicas, sistemas de gestión de contenido y plataformas de comercio electrónico. Puedes ver más en mi repositorio de GitHub.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p>Estoy disponible para nuevas oportunidades de colaboración. Si deseas contactarme, no dudes en enviarme un mensaje a través de mi correo electrónico o redes sociales.</p>
     </section>
 
     <!-- Footer -->
     <footer>
-        Designed & Built by John Doe
+        Diseñado & Desarrollado por Juan Pérez
     </footer>
 </body>
 </html>
