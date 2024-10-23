@@ -14,11 +14,18 @@
             color: #8892b0;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth; /* Desplazamiento suave */
         }
 
         a {
             text-decoration: none;
             color: #64ffda;
+            transition: color 0.3s, transform 0.3s; /* Efectos al hacer hover */
+        }
+
+        a:hover {
+            color: #ffffff;
+            transform: translateX(5px); /* Desplazamiento leve al pasar el mouse */
         }
 
         h1, h2, h3 {
@@ -56,10 +63,23 @@
             font-weight: 500;
             color: #ccd6f6;
             transition: color 0.3s;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: #64ffda;
+        .nav-links a.active {
+            color: #ffffff;
+        }
+
+        /* Indicador lateral en el enlace activo */
+        .nav-links a.active::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            height: 20px;
+            width: 4px;
+            background-color: #64ffda;
+            border-radius: 2px;
         }
 
         /* Hero section */
@@ -148,10 +168,10 @@
     <nav>
         <div class="logo">Mi Portafolio</div>
         <div class="nav-links">
-            <a href="#about">Sobre Mí</a>
-            <a href="#work">Experiencia</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#contact">Contacto</a>
+            <a href="#about" class="nav-link">Sobre Mí</a>
+            <a href="#work" class="nav-link">Experiencia</a>
+            <a href="#projects" class="nav-link">Proyectos</a>
+            <a href="#contact" class="nav-link">Contacto</a>
         </div>
     </nav>
 
@@ -192,5 +212,31 @@
     <footer>
         Diseñado & Desarrollado por Juan Pérez
     </footer>
+
+    <script>
+        // Cambio de clase "active" en el enlace correspondiente según el scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
