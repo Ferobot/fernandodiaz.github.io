@@ -1,246 +1,246 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portafolio Personal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos globales */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0a192f;
-            color: #8892b0;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth; /* Desplazamiento suave */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Portafolio Personal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<style>
+/* Estilos globales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a192f;
+    color: #8892b0;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
 
-        a {
-            text-decoration: none;
-            color: #64ffda;
-            transition: color 0.3s, transform 0.3s; /* Efectos al hacer hover */
-        }
+a {
+    text-decoration: none;
+    color: #64ffda;
+    transition: color 0.3s, transform 0.3s; /* Efectos al hacer hover */
+}
 
-        a:hover {
-            color: #ffffff;
-            transform: translateX(5px); /* Desplazamiento leve al pasar el mouse */
-        }
+a:hover {
+    color: #ffffff;
+    transform: translateX(5px); /* Desplazamiento leve al pasar el mouse */
+}
 
-        h1, h2, h3 {
-            color: #ccd6f6;
-        }
+h1, h2, h3 {
+    color: #ccd6f6;
+}
 
-        /* Navegación lateral */
-        nav {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 20px;
-            background-color: rgba(10, 25, 47, 0.85);
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 200px;
-            z-index: 1; /* La barra lateral queda detrás de la hero */
-        }
+/* Navegación lateral */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(10, 25, 47, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    z-index: 1; /* La barra lateral queda detrás de la hero */
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 600;
-            color: #64ffda;
-            margin-bottom: 40px;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #64ffda;
+    margin-bottom: 40px;
+}
 
-        .nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        .nav-links a {
-            font-weight: 500;
-            color: #ccd6f6;
-            transition: color 0.3s;
-            position: relative;
-        }
+.nav-links a {
+    font-weight: 500;
+    color: #ccd6f6;
+    transition: color 0.3s;
+    position: relative;
+}
 
-        .nav-links a.active {
-            color: #ffffff;
-        }
+.nav-links a.active {
+    color: #ffffff;
+}
 
-        /* Indicador lateral en el enlace activo */
-        .nav-links a.active::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            height: 20px;
-            width: 4px;
-            background-color: #64ffda;
-            border-radius: 2px;
-        }
+/* Indicador lateral en el enlace activo */
+.nav-links a.active::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    height: 20px;
+    width: 4px;
+    background-color: #64ffda;
+    border-radius: 2px;
+}
 
-        /* Hero section */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            padding-left: 240px;
-            position: relative;
-            z-index: 2; /* Aseguramos que la hero esté sobre la barra lateral */
-        }
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-left: 240px;
+    position: relative;
+    z-index: 2; /* Aseguramos que la hero esté sobre la barra lateral */
+}
 
-        .hero h1 {
-            font-size: 16px;
-            font-weight: 300;
-            margin: 0;
-            color: #64ffda;
-        }
+.hero h1 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    color: #64ffda;
+}
 
-        .hero h2 {
-            font-size: 56px;
-            font-weight: 600;
-            margin: 10px 0;
-        }
+.hero h2 {
+    font-size: 56px;
+    font-weight: 600;
+    margin: 10px 0;
+}
 
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
 
-        .cta-btn {
-            padding: 12px 24px;
-            border: 1px solid #64ffda;
-            color: #64ffda;
-            border-radius: 4px;
-            font-family: 'Fira Code', monospace;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
+.cta-btn {
+    padding: 12px 24px;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        .cta-btn:hover {
-            background-color: #64ffda;
-            color: #0a192f;
-        }
+.cta-btn:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+}
 
-        section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding-left: 240px;
-        }
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 240px;
+}
 
-        .about, .work, .projects, .contact {
-            margin-top: 50px;
-        }
+.about, .work, .projects, .contact {
+    margin-top: 50px;
+}
 
-        .about h2, .work h2, .projects h2, .contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+.about h2, .work h2, .projects h2, .contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
 
-        .work p, .about p, .projects p, .contact p {
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 700px;
-        }
+.work p, .about p, .projects p, .contact p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 14px;
-            color: #8892b0;
-            padding-left: 240px;
-        }
-    </style>
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    color: #8892b0;
+    padding-left: 240px;
+}
+</style>
 </head>
 <body>
-    <!-- Barra de Navegación -->
-    <nav>
-        <div class="logo">Mi Portafolio</div>
-        <div class="nav-links">
-            <a href="#about" class="nav-link">Sobre Mí</a>
-            <a href="#work" class="nav-link">Experiencia</a>
-            <a href="#projects" class="nav-link">Proyectos</a>
-            <a href="#contact" class="nav-link">Contacto</a>
-        </div>
-    </nav>
+<!-- Barra de Navegación -->
+<nav>
+    <div class="logo">Mi Portafolio</div>
+    <div class="nav-links">
+        <a href="#about" class="nav-link">Sobre Mí</a>
+        <a href="#work" class="nav-link">Experiencia</a>
+        <a href="#projects" class="nav-link">Proyectos</a>
+        <a href="#contact" class="nav-link">Contacto</a>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Hola, mi nombre es</h1>
-        <h2>Juan Pérez.</h2>
-        <h2>Construyo cosas para la web.</h2>
-        <p>Soy un desarrollador web especializado en construir experiencias digitales excepcionales. Actualmente, me enfoco en crear productos accesibles y centrados en el usuario.</p>
-        <a class="cta-btn" href="#contact">Contáctame</a>
-    </section>
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Hola, mi nombre es</h1>
+    <h2>Juan Pérez.</h2>
+    <h2>Construyo cosas para la web.</h2>
+    <p>Soy un desarrollador web especializado en construir experiencias digitales excepcionales. Actualmente, me enfoco en crear productos accesibles y centrados en el usuario.</p>
+    <a class="cta-btn" href="#contact">Contáctame</a>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>Sobre Mí</h2>
-        <p>Soy un apasionado desarrollador con experiencia en la creación de aplicaciones web modernas y eficientes. Me encanta aprender nuevas tecnologías y enfrentar retos que me permitan mejorar mis habilidades.</p>
-    </section>
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>Sobre Mí</h2>
+    <p>Soy un apasionado desarrollador con experiencia en la creación de aplicaciones web modernas y eficientes. Me encanta aprender nuevas tecnologías y enfrentar retos que me permitan mejorar mis habilidades.</p>
+</section>
 
-    <!-- Work Section -->
-    <section id="work" class="work">
-        <h2>Experiencia</h2>
-        <p>He trabajado en diversas empresas desarrollando aplicaciones y sitios web escalables, utilizando tecnologías como React, Node.js, y bases de datos SQL. Siempre enfocado en mejorar la experiencia del usuario final.</p>
-    </section>
+<!-- Work Section -->
+<section id="work" class="work">
+    <h2>Experiencia</h2>
+    <p>He trabajado en diversas empresas desarrollando aplicaciones y sitios web escalables, utilizando tecnologías como React, Node.js, y bases de datos SQL. Siempre enfocado en mejorar la experiencia del usuario final.</p>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Proyectos</h2>
-        <p>Algunos de mis proyectos recientes incluyen aplicaciones web dinámicas, sistemas de gestión de contenido y plataformas de comercio electrónico. Puedes ver más en mi repositorio de GitHub.</p>
-    </section>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <h2>Proyectos</h2>
+    <p>Algunos de mis proyectos recientes incluyen aplicaciones web dinámicas, sistemas de gestión de contenido y plataformas de comercio electrónico. Puedes ver más en mi repositorio de GitHub.</p>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contacto</h2>
-        <p>Estoy disponible para nuevas oportunidades de colaboración. Si deseas contactarme, no dudes en enviarme un mensaje a través de mi correo electrónico o redes sociales.</p>
-    </section>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contacto</h2>
+    <p>Estoy disponible para nuevas oportunidades de colaboración. Si deseas contactarme, no dudes en enviarme un mensaje a través de mi correo electrónico o redes sociales.</p>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        Diseñado & Desarrollado por Juan Pérez
-    </footer>
+<!-- Footer -->
+<footer>
+    Diseñado & Desarrollado por Juan Pérez
+</footer>
 
-    <script>
-        // Cambio de clase "active" en el enlace correspondiente según el scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
+<script>
+// Cambio de clase "active" en el enlace correspondiente según el scroll
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-            let current = '';
+    let current = '';
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - sectionHeight / 3)) {
+            current = section.getAttribute('id');
+        }
+    });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
 </body>
 </html>
 
