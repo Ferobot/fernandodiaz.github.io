@@ -140,6 +140,14 @@
             max-width: 1000px;
             margin: 0 auto;
             padding-left: 240px;
+            opacity: 0; /* Por defecto las secciones están ocultas */
+            transform: translateY(20px); /* Desplazamiento hacia abajo */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+        }
+
+        .show {
+            opacity: 1; /* Se muestra */
+            transform: translateY(0); /* Sin desplazamiento */
         }
 
         .about, .work, .projects, .contact {
@@ -240,6 +248,6 @@
                 }
             });
         });
-    </script>
-</body>
-</html>
+
+        // Animación de entrada para las secciones al hacer scroll
+        const sections
