@@ -1,12 +1,12 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
-    &lt;title&gt;Portafolio Personal&lt;/title&gt;
-    &lt;link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@300;600&display=swap" rel="stylesheet"&gt;
-    &lt;style&gt;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portafolio Personal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
         /* Estilos globales */
         body {
             font-family: 'Montserrat', sans-serif;
@@ -58,6 +58,11 @@
             font-weight: 600;
             color: #64ffda;
             margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
         }
 
         .nav-links {
@@ -187,6 +192,23 @@
         .about h2, .work h2, .projects h2, .contact h2 {
             font-size: 36px;
             margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about h2::after, .work h2::after, .projects h2::after, .contact h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #64ffda;
+            transition: width 0.3s ease;
+        }
+
+        .section-visible h2::after {
+            width: 100%;
         }
 
         .work p, .about p, .projects p, .contact p {
@@ -216,6 +238,11 @@
             color: #64ffda;
             font-size: 24px;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: rotate(90deg);
         }
 
         @media (max-width: 768px) {
@@ -235,76 +262,76 @@
                 padding-left: 20px;
             }
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;button class="nav-toggle" id="navToggle"&gt;☰&lt;/button&gt;
-    &lt;!-- Barra de Navegación --&gt;
-    &lt;nav id="mainNav"&gt;
-        &lt;div class="logo"&gt;Mi Portafolio&lt;/div&gt;
-        &lt;div class="nav-links"&gt;
-            &lt;a href="#about" class="nav-link"&gt;Sobre Mí&lt;/a&gt;
-            &lt;a href="#work" class="nav-link"&gt;Experiencia&lt;/a&gt;
-            &lt;a href="#projects" class="nav-link"&gt;Proyectos&lt;/a&gt;
-            &lt;a href="#contact" class="nav-link"&gt;Contacto&lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/nav&gt;
+    </style>
+</head>
+<body>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <!-- Barra de Navegación -->
+    <nav id="mainNav">
+        <div class="logo">Mi Portafolio</div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">Sobre Mí</a>
+            <a href="#work" class="nav-link">Experiencia</a>
+            <a href="#projects" class="nav-link">Proyectos</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+        </div>
+    </nav>
 
-    &lt;!-- Hero Section --&gt;
-    &lt;section class="hero"&gt;
-        &lt;h1&gt;Hola, mi nombre es&lt;/h1&gt;
-        &lt;h2&gt;Juan Pérez.&lt;/h2&gt;
-        &lt;h2&gt;Construyo cosas para la web.&lt;/h2&gt;
-        &lt;p&gt;Soy un desarrollador web especializado en construir experiencias digitales excepcionales. Actualmente, me enfoco en crear productos accesibles y centrados en el usuario.&lt;/p&gt;
-        &lt;a class="cta-btn" href="#contact"&gt;Contáctame&lt;/a&gt;
-    &lt;/section&gt;
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Hola, mi nombre es</h1>
+        <h2>Juan Pérez.</h2>
+        <h2>Construyo cosas para la web.</h2>
+        <p>Soy un desarrollador web especializado en construir experiencias digitales excepcionales. Actualmente, me enfoco en crear productos accesibles y centrados en el usuario.</p>
+        <a class="cta-btn" href="#contact">Contáctame</a>
+    </section>
 
-    &lt;!-- About Section --&gt;
-    &lt;section id="about" class="about"&gt;
-        &lt;h2&gt;Sobre Mí&lt;/h2&gt;
-        &lt;p&gt;Soy un apasionado desarrollador con experiencia en la creación de aplicaciones web modernas y eficientes. Me encanta aprender nuevas tecnologías y enfrentar retos que me permitan mejorar mis habilidades.&lt;/p&gt;
-    &lt;/section&gt;
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Sobre Mí</h2>
+        <p>Soy un apasionado desarrollador con experiencia en la creación de aplicaciones web modernas y eficientes. Me encanta aprender nuevas tecnologías y enfrentar retos que me permitan mejorar mis habilidades.</p>
+    </section>
 
-    &lt;!-- Work Section --&gt;
-    &lt;section id="work" class="work"&gt;
-        &lt;h2&gt;Experiencia&lt;/h2&gt;
-        &lt;p&gt;He trabajado en diversas empresas desarrollando aplicaciones y sitios web escalables, utilizando tecnologías como React, Node.js, y bases de datos SQL. Siempre enfocado en mejorar la experiencia del usuario final.&lt;/p&gt;
-    &lt;/section&gt;
+    <!-- Work Section -->
+    <section id="work" class="work">
+        <h2>Experiencia</h2>
+        <p>He trabajado en diversas empresas desarrollando aplicaciones y sitios web escalables, utilizando tecnologías como React, Node.js, y bases de datos SQL. Siempre enfocado en mejorar la experiencia del usuario final.</p>
+    </section>
 
-    &lt;!-- Projects Section --&gt;
-    &lt;section id="projects" class="projects"&gt;
-        &lt;h2&gt;Proyectos&lt;/h2&gt;
-        &lt;p&gt;Algunos de mis proyectos recientes incluyen aplicaciones web dinámicas, sistemas de gestión de contenido y plataformas de comercio electrónico. Puedes ver más en mi repositorio de GitHub.&lt;/p&gt;
-    &lt;/section&gt;
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Proyectos</h2>
+        <p>Algunos de mis proyectos recientes incluyen aplicaciones web dinámicas, sistemas de gestión de contenido y plataformas de comercio electrónico. Puedes ver más en mi repositorio de GitHub.</p>
+    </section>
 
-    &lt;!-- Contact Section --&gt;
-    &lt;section id="contact" class="contact"&gt;
-        &lt;h2&gt;Contacto&lt;/h2&gt;
-        &lt;p&gt;Estoy disponible para nuevas oportunidades de colaboración. Si deseas contactarme, no dudes en enviarme un mensaje a través de mi correo electrónico o redes sociales.&lt;/p&gt;
-    &lt;/section&gt;
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p>Estoy disponible para nuevas oportunidades de colaboración. Si deseas contactarme, no dudes en enviarme un mensaje a través de mi correo electrónico o redes sociales.</p>
+    </section>
 
-    &lt;!-- Footer --&gt;
-    &lt;footer&gt;
+    <!-- Footer -->
+    <footer>
         Diseñado & Desarrollado por Juan Pérez
-    &lt;/footer&gt;
+    </footer>
 
-    &lt;script&gt;
+    <script>
         // Cambio de clase "active" en el enlace correspondiente según el scroll
-        window.addEventListener('scroll', () =&gt; {
+        window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
 
             let current = '';
 
-            sections.forEach(section =&gt; {
+            sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY &gt;= (sectionTop - sectionHeight / 3)) {
+                if (scrollY >= (sectionTop - sectionHeight / 3)) {
                     current = section.getAttribute('id');
                 }
             });
 
-            navLinks.forEach(link =&gt; {
+            navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href').slice(1) === current) {
                     link.classList.add('active');
@@ -312,8 +339,8 @@
             });
 
             // Añadir clase para hacer visible la sección actual
-            sections.forEach(section =&gt; {
-                if (section.getBoundingClientRect().top &lt; window.innerHeight * 0.75) {
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight * 0.75) {
                     section.classList.add('section-visible');
                 }
             });
@@ -323,16 +350,32 @@
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
 
-        navToggle.addEventListener('click', () =&gt; {
+        navToggle.addEventListener('click', () => {
             mainNav.classList.toggle('nav-visible');
         });
 
         // Cerrar la navegación al hacer clic en un enlace (para dispositivos móviles)
-        document.querySelectorAll('.nav-link').forEach(link =&gt; {
-            link.addEventListener('click', () =&gt; {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
                 mainNav.classList.remove('nav-visible');
             });
         });
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+
+        // Efecto de escritura para el título principal
+        const titleElement = document.querySelector('.hero h2');
+        const titleText = titleElement.textContent;
+        titleElement.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < titleText.length) {
+                titleElement.textContent += titleText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        setTimeout(typeWriter, 1500);
+    </script>
+</body>
+</html>
